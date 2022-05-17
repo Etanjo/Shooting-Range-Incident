@@ -7,7 +7,7 @@ app.appendChild(bgCanvas);
 app.appendChild(playerCanvas);
 
 export function setupCanvas(canvas:HTMLCanvasElement){
-canvas.width = 1000;
+canvas.width = 1500;
 canvas.height = 700;
 
 canvas.style.width = '1500px';
