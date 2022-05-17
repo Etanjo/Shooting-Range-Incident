@@ -1,4 +1,4 @@
 import './style.css'
-import './canvas.ts'
-import './enemay.ts'
+import './earthan/canvas.ts'
+import './brain/enemay.ts'
 
