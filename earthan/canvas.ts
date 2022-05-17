@@ -2,9 +2,11 @@ export let app = document.querySelector('#app');
 
 export let pCanvas = document.createElement('canvas');
 export let bgCanvas = document.createElement('canvas');
+export let bCanvas = document.createElement('canvas')
 
 app.appendChild(bgCanvas);
 app.appendChild(pCanvas);
+app.appendChild(bCanvas)
 
 export function setupCanvas(canvas:HTMLCanvasElement){
 canvas.width = 1500;
@@ -32,3 +34,7 @@ pCanvas.style.position = 'absolute'
 pCanvas.style.right = '5px'
 pCanvas.style.top = '60px'
 pCanvas.style.backgroundColor = 'Yellow'
+setupCanvas(bCanvas)
+bCanvas.style.position = "absolute"
+bCanvas.style.right = '5px'
+bCanvas.style.top = '60px'
