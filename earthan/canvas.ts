@@ -28,3 +28,7 @@ pCanvas.width = 375
 pCanvas.style.borderWidth = '3px';
 pCanvas.style.borderColor = 'Black';
 pCanvas.style.borderStyle = 'solid';
+pCanvas.style.position = 'absolute'
+pCanvas.style.right = '5px'
+pCanvas.style.top = '60px'
+pCanvas.style.backgroundColor = 'Yellow'
