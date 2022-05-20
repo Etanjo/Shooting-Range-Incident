@@ -1,6 +1,6 @@
 /*
-import greenImage from './jacksoon/green.png';
-
+import greenImage from '/jacksoon/Green.png';
+import bganvas from '/earthan/canvas.ts'
 
 function drawsolder () {
   let pctx = bganvas.getContext('2d');
@@ -24,8 +24,31 @@ export let green = {
   image: greenImage,
 };
 
+let startTime
+
+function animategreen (timestamp : number = 0) {
+  let elapsed;
+  if (timestamp) {
+    if (!startTime) {
+      startTime = timestamp;
+      elapsed = 0;
+    } else {
+      elapsed = timestamp - startTime
+      startTime = timestamp;
+    }
+    updategreen(elapsed);    
+  }  
+  drawgreenImage();
+  requestAnimationFrame(animategreen)
+}
+
 greenImage.addEventListener(
   "load",
-function () {animatesword()}
+function () {animategreen()}
 );
-*/
+
+function updategreen (elapsed : number) {
+  if  (green.x > bganvas.width) {
+  updategame = 0 
+  }
+  */
