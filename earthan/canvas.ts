@@ -2,11 +2,14 @@ export let app = document.querySelector('#app');
 
 export let pCanvas = document.createElement('canvas');
 export let bgCanvas = document.createElement('canvas');
+export let eCanvas = document.createElement('canvas')
 export let bCanvas = document.createElement('canvas')
 export let uiCanvas = document.createElement('canvas')
 
+
 app.appendChild(bgCanvas);
 app.appendChild(pCanvas);
+app.appendChild(eCanvas)
 app.appendChild(bCanvas);
 app.appendChild(uiCanvas);
 
@@ -20,12 +23,17 @@ canvas.style.height = '650px';
 canvas.style.borderWidth = '3px';
 canvas.style.borderColor = 'Black';
 canvas.style.borderStyle = 'solid';
+canvas.style.position = "absolute";
+canvas.style.right = '5px'
+canvas.style.top = '60px'
 }
 
 setupCanvas(bgCanvas)
 export let bgctx = bgCanvas.getContext('2d')
 export let pctx = pCanvas.getContext('2d')
 export let bctx = bCanvas.getContext('2d')
+export let uictx = uiCanvas.getContext('2d')
+export let ectx = eCanvas.getContext('2d')
 pCanvas.style.width = '375px'
 pCanvas.style.height = '650px'
 pCanvas.height = 650
@@ -37,11 +45,6 @@ pCanvas.style.position = 'absolute'
 pCanvas.style.right = '5px'
 pCanvas.style.top = '60px'
 pCanvas.style.backgroundColor = 'Yellow'
+setupCanvas(eCanvas)
 setupCanvas(bCanvas)
-bCanvas.style.position = "absolute"
-bCanvas.style.right = '5px'
-bCanvas.style.top = '60px'
 setupCanvas(uiCanvas)
-uiCanvas.style.position = "absolute"
-uiCanvas.style.right = '5px'
-uiCanvas.style.top = '60px'
