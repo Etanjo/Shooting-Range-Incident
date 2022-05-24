@@ -2,11 +2,11 @@
 import greenImage from '/jacksoon/Green.png';
 import bganvas from '/earthan/canvas.ts'
 
-function drawsolder () {
+function drawgreen() {
   let pctx = bganvas.getContext('2d');
   pctx.resetTransform();
-  pctx.clearRect(0,0,bganvas.width,bganvas.height);
-  pctx.translate(green.x+25 , green.y+25)
+  pctx.clearRect(0, 0, bganvas.width, bganvas.height);
+  pctx.translate(green.x + 25, green.y + 25)
   pctx.drawImage(
     greenImage,
     -100,
@@ -24,9 +24,9 @@ export let green = {
   image: greenImage,
 };
 
-let startTime
+let startTime = null;
 
-function animategreen (timestamp : number = 0) {
+function animategreen(timestamp: number = 0) {
   let elapsed;
   if (timestamp) {
     if (!startTime) {
@@ -36,19 +36,37 @@ function animategreen (timestamp : number = 0) {
       elapsed = timestamp - startTime
       startTime = timestamp;
     }
-    updategreen(elapsed);    
-  }  
+    updategreen(elapsed);
+  }
   drawgreenImage();
   requestAnimationFrame(animategreen)
 }
 
-greenImage.addEventListener(
-  "load",
-function () {animategreen()}
-);
+function drawgreenImage() {
+  let ctx = green.getContext('2d');
+  ctx.resetTransform();
+  ctx.clearRect(0, 0, bganvas.width, bganvas.height);
+  ctx.translate(green.x + 25, green.y + 25)
+  ctx.drawImage(green.image,
+    -50,
+    -30.95,
+    100,
+    60,
+  );
 
-function updategreen (elapsed : number) {
-  if  (green.x > bganvas.width) {
-  updategame = 0 
+  greenImage.addEventListener(
+    "load",
+    function() { animategreen() }
+  );
+}
+
+
+
+function updategreen(elapsed: number) {
+green.x += 100 * elapsed/1000 
+  
+  if (green.x > bganvas.width) {
+    green.x = 0;
   }
-  */
+}
+*/
