@@ -2,7 +2,7 @@ import {bCanvas} from './canvas'
 import {bctx} from './canvas'
 import bulletUrl from './bullet.png';
 import laserUrl from './laser.png'
-import {alpha} from "/anrrews work/movement"
+import {alpha} from "/anrrew/movement"
 
 let assetDiv : HTMLDivElement = document.querySelector('#assets');
 
