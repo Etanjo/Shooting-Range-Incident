@@ -44,7 +44,6 @@ pCanvas.style.borderStyle = 'solid';
 pCanvas.style.position = 'absolute'
 pCanvas.style.left = '1130px'
 pCanvas.style.top = '60px'
-pCanvas.style.backgroundColor = 'Yellow'
 setupCanvas(eCanvas)
 setupCanvas(bCanvas)
 setupCanvas(uiCanvas)
