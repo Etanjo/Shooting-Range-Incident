@@ -44,14 +44,17 @@ pctx.clearRect(0,0,pCanvas.width,pCanvas.height);
 
 function updatealpha (elapsed : number) {
 
-  if (alpha.y < 0){
+  if (alpha.y < -50){
+    alpha.y = 325;
+  }
+  if (alpha.y > 650){
     alpha.y = 325;
   }
   if (alpha.x < 0){
-    alpha.x = 250;
+    alpha.x = 325;
   }
   if (alpha.x >250){
-    alpha.x = 0;
+    alpha.x = 325;
   }
 }
 
