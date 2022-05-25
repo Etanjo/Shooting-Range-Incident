@@ -76,7 +76,7 @@ requestAnimationFrame(animateShots)
 }
 
 
-document.addEventListener('keypress', function(event){
+document.addEventListener('keyup', function(event){
   if(event.key == 'e'){
     //shots.push(laser)
     makeLaser()
