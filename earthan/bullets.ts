@@ -2,6 +2,7 @@ import {bCanvas} from './canvas'
 import {bctx} from './canvas'
 import bulletUrl from './bullet.png';
 import laserUrl from './laser.png'
+import {alpha} from "/anrrews work/movement"
 
 let assetDiv : HTMLDivElement = document.querySelector('#assets');
 
@@ -33,8 +34,8 @@ export function makeBullet(){
 
 export function makeLaser () {
   let laser =  {
-    x:1125,
-    y: 325,
+    x:alpha.x,
+    y: alpha.y,
     speed:5,
     type: 2
   }
