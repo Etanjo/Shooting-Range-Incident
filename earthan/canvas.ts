@@ -24,7 +24,7 @@ canvas.style.borderWidth = '3px';
 canvas.style.borderColor = 'Black';
 canvas.style.borderStyle = 'solid';
 canvas.style.position = "absolute";
-canvas.style.right = '5px'
+canvas.style.left = '5px'
 canvas.style.top = '60px'
 }
 
@@ -42,7 +42,7 @@ pCanvas.style.borderWidth = '3px';
 pCanvas.style.borderColor = 'Black';
 pCanvas.style.borderStyle = 'solid';
 pCanvas.style.position = 'absolute'
-pCanvas.style.right = '5px'
+pCanvas.style.left = '1130px'
 pCanvas.style.top = '60px'
 pCanvas.style.backgroundColor = 'Yellow'
 setupCanvas(eCanvas)

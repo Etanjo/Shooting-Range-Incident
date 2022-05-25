@@ -1,6 +1,6 @@
-import alphaUrl from './jacksoon/alpha.png';
+import alphaUrl from '/jacksoon/alpha.png';
 
-let assetDiv : HTMLDivElement = document.querySelector('#jacksoon');
+let assetDiv : HTMLDivElement = document.querySelector('#assets');
 
 export let alphaImage = document.createElement('img');
 alphaImage.src = alphaUrl;
