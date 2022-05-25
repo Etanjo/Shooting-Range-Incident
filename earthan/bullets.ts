@@ -34,7 +34,7 @@ export function makeBullet(){
 
 export function makeLaser () {
   let laser =  {
-    x:alpha.x,
+    x:alpha.x + 1125,
     y: alpha.y,
     speed:5,
     type: 2
@@ -76,7 +76,7 @@ requestAnimationFrame(animateShots)
 }
 
 
-document.addEventListener('keypress', function(event){
+document.addEventListener('keyup', function(event){
   if(event.key == 'e'){
     //shots.push(laser)
     makeLaser()
