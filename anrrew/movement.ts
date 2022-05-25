@@ -33,7 +33,6 @@ function drawalpha () {
   let pctx = pCanvas.getContext('2d');
 pctx.resetTransform();
 pctx.clearRect(0,0,pCanvas.width,pCanvas.height);
-  pctx.translate(alpha.x+25 , alpha.y+25)
   pctx.drawImage(
     alphaImage,
     alpha.x,
@@ -44,7 +43,7 @@ pctx.clearRect(0,0,pCanvas.width,pCanvas.height);
 }
 
 function updatealpha (elapsed : number) {
-  alpha.y += 1200 * elapsed/1000;
+
   if (alpha.y < 0){
     alpha.y = 325;
   }
