@@ -1,8 +1,15 @@
-/*
-import greenImage from '/jacksoon/Green.png';
+
+import greenURL from '/jacksoon/Green.png';
 //import {greenImage} from '/brain/testfile.ts'
 import {eCanvas} from '/earthan/canvas.ts'
 
+let assetDiv : HTMLDivElement = document.querySelector('#assets');
+
+assetDiv.style.display = 'none'; // hide the images
+
+export let greenImage = document.createElement('img');
+greenImage.src = greenURL;
+assetDiv.appendChild(greenImage);
 
 
 function drawgreenImage() {
@@ -47,7 +54,7 @@ function animategreen(timestamp: number = 0) {
   requestAnimationFrame(animategreen)
 }
 
-drawgreenImage.addEventListener(
+greenImage.addEventListener(
   "load",
 function () {animategreen()}
 );
@@ -56,8 +63,7 @@ function () {animategreen()}
 function updategreen(elapsed: number) {
 green.x += 100 * elapsed/1000 
   
-  if (green.x > eCanvas.width) {
+  if (green.x > 1000) {
     green.x = 0;
   }
 }
-*/
