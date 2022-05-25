@@ -11,7 +11,7 @@ let bgsize = 650; // size of each frame
 function showNextFrame () {
   bgframe = (bgframe + 1) % bgnframes; // add one, loop back to zero
   let offset = bgframe * bgsize;
-  bgCanvas.style.backgroundPositionY = `+${offset}px`;
+  bgCanvas.style.backgroundPositionY = `-${offset}px`;
 }
 
 setInterval( // run forever on a timer
