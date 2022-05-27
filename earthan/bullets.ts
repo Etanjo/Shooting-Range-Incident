@@ -58,7 +58,7 @@ function drawBullet(bullet){
 
 function updateLaser(laser){
   laser.x -= laser.speed
-  if(laser.x < 0){
+  if(laser.x < -5){
     lasers.splice(laser, 1)
   }
 }
