@@ -49,6 +49,7 @@ export function makeLaser () {
 
 function updateBullet(bullet){
   bullet.x += bullet.speed
+  
 }
 
 function drawBullet(bullet){
@@ -57,9 +58,10 @@ function drawBullet(bullet){
 
 function updateLaser(laser){
   laser.x -= laser.speed
-  //if(laser.x < 0){
-    //laser.splice(laser)
+  if(laser.x < 0){
+    lasers.splice(laser, 1)
   }
+}
 
 
 
