@@ -1,8 +1,12 @@
 import {app} from "./canvas"
+import {damage} from './bullets'
 export let shopTitle = document.createElement('text')
 export let upgradeButton = document.createElement('button')
 app.appendChild (shopTitle)
 app.appendChild(upgradeButton)
+
+export let money = 0
+export let dmgMoneyNeeded = 1000
 
 
 upgradeButton.style.left = "1550px"
@@ -23,3 +27,11 @@ shopTitle.style.borderBottomColor = "black"
 shopTitle.style.borderBottomWidth = "5px"
 shopTitle.style.borderStyle = "solid"
 shopTitle.style.textShadow = '2px, 2px, black'
+
+upgradeButton.addEventListener("click", function(event){
+  if (money >= dmgMoneyNeeded){
+    damage += 0.5*damage
+    money-=dmgMoneyNeeded
+    dmgMoneyNeeded += 0.5*dmgMoneyNeeded
+  }
+})

@@ -6,7 +6,9 @@ import {alpha} from "/anrrew/movement"
 
 let assetDiv : HTMLDivElement = document.querySelector('#assets');
 
-assetDiv.style.display = 'none'; // hide the images
+export let damage = 2
+
+assetDiv.style.display = 'none'; 
 
 export let bulletImage = document.createElement('img');
 bulletImage.src = bulletUrl;
@@ -37,7 +39,7 @@ export function makeLaser () {
     x:alpha.x + 1125,
     y: alpha.y,
     speed:5,
-    type: 2
+    damage: damage
   }
   lasers.push(laser);
   return laser;
