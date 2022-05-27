@@ -8,6 +8,8 @@ let bgframe = 0; // current frame
 let bgnframes = 48; // number of frames
 let bgsize = 650; // size of each frame
 
+
+
 function showNextFrame () {
   bgframe = (bgframe + 1) % bgnframes; // add one, loop back to zero
   let offset = bgframe * bgsize;
