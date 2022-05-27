@@ -51,10 +51,10 @@ function updatealpha (elapsed : number) {
     alpha.y = 325;
   }
   if (alpha.x < 0){
-    alpha.x = 325;
+    alpha.x = 150;
   }
   if (alpha.x >250){
-    alpha.x = 325;
+    alpha.x = 150;
   }
 }
 
@@ -84,6 +84,12 @@ window.addEventListener(
     }
     if (event.key == 'ArrowUp' || event.key=='w') {
       alpha.y -= 20;
+    }
+    if(event.key == 'arrowLeft' || event.key=='a'){
+      alpha.x -=20;
+    }
+    if(event.key == 'arrowRight' || event.key=='d'){
+      alpha.x +=20;
     }
   }
 )
