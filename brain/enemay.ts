@@ -1,9 +1,9 @@
 
 import greenURL from '/jacksoon/Green.png';
 //import {greenImage} from '/brain/testfile.ts'
-import {eCanvas} from '/earthan/canvas.ts'
+import { eCanvas, ectx } from '/earthan/canvas.ts'
 
-let assetDiv : HTMLDivElement = document.querySelector('#assets');
+let assetDiv: HTMLDivElement = document.querySelector('#assets');
 
 assetDiv.style.display = 'none'; // hide the images
 
@@ -16,14 +16,21 @@ function drawgreenImage() {
   let ectx = eCanvas.getContext('2d');
   ectx.resetTransform();
   ectx.clearRect(0, 0, eCanvas.width, eCanvas.height);
-  ectx.translate(green.x + 25, green.y + 25)
-  ectx.drawImage( green.image,
+  //ectx.translate(green.x + 25, green.y + 25)
+  /*ectx.drawImage(green.image,
     -100,
     -100,
     200,
     200
-  );
-  
+  );*/
+  ectx.drawImage(
+      green.image,  // image to draw
+      // offset is equal to 0
+      green.offset, 0,  // source offset
+      64, 64,  // source size
+      green.x, green.y, // destination offset
+      64, 64 // destination size
+      );    
 }
 
 
@@ -33,8 +40,17 @@ export let green = {
   x: 100,
   y: 100,
   s: 100,
+  offset : 0,
   image: greenImage,
 };
+
+setInterval(
+  function () {
+    // rotate between 0, 64, 128, 196, etc
+    green.offset = (green.offset + 64) % (64*4);
+  },
+  500 // ms
+)
 
 let startTime = null;
 
@@ -56,14 +72,45 @@ function animategreen(timestamp: number = 0) {
 
 greenImage.addEventListener(
   "load",
-function () {animategreen()}
+  function() { animategreen() }
 );
 
 
 function updategreen(elapsed: number) {
-green.x += 100 * elapsed/1000 
-  
+  green.x += 100 * elapsed / 1000
   if (green.x > 1000) {
     green.x = 0;
   }
+  
 }
+
+
+/*
+function let () {
+  
+}
+/*
+function animateCanvas() {
+
+}
+
+
+
+
+let div = document.querySelector('#sprite');
+
+let frame = 0;
+let nframes = 8;
+let size = 64;
+
+function showNextFrame() {
+  frame = (frame + 1) % nframes;
+  let offset = frame * size;
+  div.style.backgroundPosition = `-${offset}px`;
+}
+
+setInterval(
+  showNextFrame,
+  1000 / 12
+)
+*/
