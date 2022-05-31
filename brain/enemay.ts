@@ -1,5 +1,6 @@
 
 import greenURL from '/jacksoon/Green.png';
+
 //import {greenImage} from '/brain/testfile.ts'
 import { eCanvas, ectx } from '/earthan/canvas.ts'
 
@@ -29,7 +30,7 @@ function drawgreenImage() {
       green.offset, 0,  // source offset
       64, 64,  // source size
       green.x, green.y, // destination offset
-      64, 64 // destination size
+      128, 128 // destination size
       );    
 }
 
@@ -49,12 +50,12 @@ setInterval(
     // rotate between 0, 64, 128, 196, etc
     green.offset = (green.offset + 64) % (64*4);
   },
-  500 // ms
+  180 // ms
 )
 
 let startTime = null;
 
-function animategreen(timestamp: number = 0) {
+export function animategreen(timestamp: number = 0) {
   let elapsed;
   if (timestamp) {
     if (!startTime) {
@@ -76,7 +77,7 @@ greenImage.addEventListener(
 );
 
 
-function updategreen(elapsed: number) {
+export function updategreen(elapsed: number) {
   green.x += 100 * elapsed / 1000
   if (green.x > 1000) {
     green.x = 0;
