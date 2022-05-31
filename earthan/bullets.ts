@@ -3,10 +3,11 @@ import {bctx} from './canvas'
 import bulletUrl from './bullet.png';
 import laserUrl from './laser.png'
 import {alpha} from "/anrrew/movement"
+import {laserkill} from '/anrrew/getshot'
 
 let assetDiv : HTMLDivElement = document.querySelector('#assets');
 
-export let damage = 2
+export var damage = 2
 
 assetDiv.style.display = 'none'; 
 
@@ -73,6 +74,7 @@ function animateShots(){
  bctx.clearRect(0,0,bCanvas.width, bCanvas.height)
 lasers.forEach(updateLaser)
 lasers.forEach(drawLaser)
+lasers.forEach(laserkill)
 bullets.forEach(updateBullet)
 bullets.forEach(drawBullet)
   

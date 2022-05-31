@@ -7,5 +7,15 @@
   margin-top: 60px;
 }
 #shoptitle {
-  text-align: right
+  text-align: right;
+}
+
+#instructions{
+  margin-top: 720px;
+  text-align: left;
+  font-family: monospace, lucida-console;
+  color: #006666;
+  width: 750px;
+  font-size: 30px
+  
 }

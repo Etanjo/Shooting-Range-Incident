@@ -10,6 +10,4 @@ export function laserkill (laser) {
   console.log(distance);
   if(distance <=50)
   {green.x= Math.random()*1000}
-}
-
-laserkill();
+};
