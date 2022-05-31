@@ -4,10 +4,12 @@ import bulletUrl from './bullet.png';
 import laserUrl from './laser.png'
 import {alpha} from "/anrrew/movement"
 import {laserkill} from '/anrrew/getshot'
+import {money} from './shop'
+import {green} from '/brain/enemay'
 
 let assetDiv : HTMLDivElement = document.querySelector('#assets');
 
-export var damage = 2
+export var damage 
 
 assetDiv.style.display = 'none'; 
 
@@ -91,3 +93,4 @@ document.addEventListener('keyup', function(event){
   }
 })
 animateShots()
+

@@ -8,6 +8,7 @@
 }
 #shoptitle {
   text-align: right;
+  background: transparent;
 }
 
 #instructions{
@@ -16,6 +17,14 @@
   font-family: monospace, lucida-console;
   color: #006666;
   width: 750px;
-  font-size: 30px
+  font-size: 30px;
+  background: white;
+  opacity: 45%
   
+}
+
+html{
+ background: linear-gradient(140deg, rgba(174,174,177,1) 0%, rgba(29,29,29,1) 51%, rgba(167,36,36,1) 100%);
+
+
 }
