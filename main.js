@@ -5,4 +5,4 @@ import './earthan/bullets.ts'
 import './brain/testfile.ts'
 import './earthan/background.ts'
 import './earthan/shop.ts'
-
+import './anrrew/getshot.ts'

@@ -2,6 +2,7 @@ import {app} from "./canvas"
 import {damage} from './bullets'
 export let shopTitle = document.createElement('text')
 export let upgradeButton = document.createElement('button')
+export let health = 10
 app.appendChild (shopTitle)
 app.appendChild(upgradeButton)
 
