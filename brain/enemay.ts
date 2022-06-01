@@ -81,6 +81,7 @@ export function updategreen(elapsed: number) {
   green.x += 100 * elapsed / 1000
   if (green.x > 1000) {
     green.x = 0;
+    green.y = Math.random()*650
   }
   
 }

@@ -9,7 +9,10 @@ export function laserkill (laser) {
   );
   console.log(distance);
   if(distance <=75)
-  {green.x= 0
+  {let kill = Math.random()*3
+   if(kill<=1){
+    green.x= 0
+   green.y = Math.random()*650}
   lasers.splice(laser,1)
   }
 };
