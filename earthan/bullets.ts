@@ -27,8 +27,8 @@ export let bullets = []
 export function makeBullet(){
   
   let bullet = {
-  x : 0,
-  y : 325,
+  x:green.x,
+  y : green.y,
   speed: 5,
   type: 1,
 }
@@ -39,8 +39,8 @@ export function makeBullet(){
 
 export function makeLaser () {
   let laser =  {
-    x:alpha.x + 1125,
-    y: alpha.y,
+    x:alpha.x + 1123,
+    y: alpha.y + 37.5,
     speed:5,
     damage: damage
   }
