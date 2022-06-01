@@ -1,7 +1,7 @@
 
 //import alphaUrl from '/jacksoon/alpha.png';
 
-import alphaUrl from '/anrrew/alphatm.png'
+import alphaUrl from '/jacksoon/Alphastill.png'
   
 let assetDiv : HTMLDivElement = document.querySelector('#assets');
 
@@ -19,6 +19,7 @@ import bartenderUrl from '/anrrew/bartender.png'
 export let bartenderImage = document.createElement('img');
 bartenderImage.src = bartenderUrl;
 assetDiv.appendChild(bartenderImage)
+
 
 import {pCanvas} from '/earthan/canvas.ts'
 
@@ -113,3 +114,4 @@ setInterval(
   1000/6
 );
 */
+
