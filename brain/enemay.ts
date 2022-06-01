@@ -28,7 +28,7 @@ function drawgreenImage() {
       green.image,  // image to draw
       // offset is equal to 0
       green.offset, 0,  // source offset
-      32, 32,  // source size
+      256, 256,  // source size
       green.x, green.y, // destination offset
       128, 128 // destination size
       );    
@@ -48,7 +48,7 @@ export let green = {
 setInterval(
   function () {
     // rotate between 0, 64, 128, 196, etc
-    green.offset = (green.offset + 32) % (32*4);
+    green.offset = (green.offset + 256) % (256*4);
   },
   180 // ms
 )
