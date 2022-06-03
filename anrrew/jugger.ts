@@ -1,19 +1,16 @@
-import jugURl from '/jacksoon/juggernaut.png'
-import { jugCanvas, jugCtx } from '/earthan/canvas.ts' 
-import phantogusUrl from '/annrew/alphatm.png'
+import jugURl from '/jacksoon/Juggernaut.png'
+import { jugCanvas, jugctx } from '/earthan/canvas.ts' 
+import phantogusUrl from '/anrrew/alphatm.png'
 
 let assetDiv: HTMLDivElement = document.querySelector('#assets');
 
 //assetDiv.style.display = 'none'; // hide the images
 
 
-//export let jugImage = document.createElement('img');
-//jugImage.src = jugURl;
-//assetDiv.appendChild(jugImage);
-
 export let jugImage = document.createElement('img');
-jugImage.src = phantogusUrl;
+jugImage.src = jugURl;
 assetDiv.appendChild(jugImage);
+
 
 export let jug = {
   x: 100,
@@ -54,8 +51,17 @@ function animatejug(timestamp: number = 0) {
   requestAnimationFrame(animatejug)
 }
 
+setInterval(
+  function () {
+    // rotate between 0, 64, 128, 196, etc
+    jug.offset = (jug.offset + 256) % (51200*200);
+  },
+  180 // ms
+)
+
+
 function updatejug(elapsed: number) {
-  jug.x += 1000 * elapsed / 1000
+  jug.x += 50 * elapsed / 1000
   if (jug.x > 1000) {
     jug.x = 0;
   }
