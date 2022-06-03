@@ -23,13 +23,14 @@ export let jug = {
 function drawjug () {
   jugctx.resetTransform();
   jugctx.clearRect(0,0,jugCanvas.width,jugCanvas.height);
-  jugctx.drawImage(
-    jugImage,
-    jug.x,
-    jug.y,
-    256,
-    256
-  )
+jugctx.drawImage(
+      jug.image,  // image to draw
+      // offset is equal to 0
+      jug.offset, 0,  // source offset
+      256, 256,  // source size
+      jug.x, jug.y, // destination offset
+      128, 128 // destination size
+      );   
 }
 
 
@@ -54,9 +55,9 @@ function animatejug(timestamp: number = 0) {
 setInterval(
   function () {
     // rotate between 0, 64, 128, 196, etc
-    jug.offset = (jug.offset + 256) % (51200*200);
+    jug.offset = (jug.offset + 256) % (256*200);
   },
-  180 // ms
+  9 // ms
 )
 
 
