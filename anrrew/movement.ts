@@ -38,8 +38,8 @@ pctx.clearRect(0,0,pCanvas.width,pCanvas.height);
     alphaImage,
     alpha.x,
     alpha.y,
-    200,
-    200
+    150,
+    150
   )
 }
 
