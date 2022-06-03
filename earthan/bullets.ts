@@ -3,7 +3,7 @@ import {bctx} from './canvas'
 import bulletUrl from './bullet.png';
 import laserUrl from './laser.png'
 import {alpha} from "/anrrew/movement"
-import {laserkill} from '/anrrew/getshot'
+import {greenkill} from '/anrrew/getshot'
 import {money} from './shop'
 import {green} from '/brain/enemay'
 
@@ -76,7 +76,7 @@ function animateShots(){
  bctx.clearRect(0,0,bCanvas.width, bCanvas.height)
 lasers.forEach(updateLaser)
 lasers.forEach(drawLaser)
-lasers.forEach(laserkill)
+lasers.forEach(greenkill)
 bullets.forEach(updateBullet)
 bullets.forEach(drawBullet)
   
