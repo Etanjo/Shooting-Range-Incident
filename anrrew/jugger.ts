@@ -1,18 +1,21 @@
-/*
 import jugURl from '/jacksoon/juggernaut.png'
 import { jugCanvas, jugCtx } from '/earthan/canvas.ts' 
-
+import phantogusUrl from '/annrew/alphatm.png'
 
 let assetDiv: HTMLDivElement = document.querySelector('#assets');
 
-assetDiv.style.display = 'none'; // hide the images
+//assetDiv.style.display = 'none'; // hide the images
 
+
+//export let jugImage = document.createElement('img');
+//jugImage.src = jugURl;
+//assetDiv.appendChild(jugImage);
 
 export let jugImage = document.createElement('img');
-jugImage.src = jugURl;
+jugImage.src = phantogusUrl;
 assetDiv.appendChild(jugImage);
 
-export let juggernaut = {
+export let jug = {
   x: 100,
   y: 100,
   s: 100,
@@ -21,36 +24,17 @@ export let juggernaut = {
 };
 
 function drawjug () {
-  let jugctx = pCanvas.getContext('2d');
   jugctx.resetTransform();
-  jugctx.clearRect(0,0,pCanvas.width,pCanvas.height);
+  jugctx.clearRect(0,0,jugCanvas.width,jugCanvas.height);
   jugctx.drawImage(
     jugImage,
     jug.x,
     jug.y,
-    150,
-    150
+    256,
+    256
   )
 }
 
-
-
-
-export let juggernaut = {
-  x: 100,
-  y: 100,
-  s: 100,
-  offset : 0,
-  image: jugImage,
-};
-
-setInterval(
-  function () {
-    // rotate between 0, 64, 128, 196, etc
-    jugImage.offset = (jugImage.offset + 64) % (64*4);
-  },
-  180 // ms
-)
 
 let startTime = null;
 
@@ -66,21 +50,19 @@ function animatejug(timestamp: number = 0) {
     }
     updatejug(elapsed);
   }
-  drawjugImage();
+  drawjug();
   requestAnimationFrame(animatejug)
+}
+
+function updatejug(elapsed: number) {
+  jug.x += 1000 * elapsed / 1000
+  if (jug.x > 1000) {
+    jug.x = 0;
+  }
+  
 }
 
 jugImage.addEventListener(
   "load",
   function() { animatejug() }
 );
-
-
-function updatejug(elapsed: number) {
-  juggernaut.x += 100 * elapsed / 1000
-  if (juggernaut.x > 1000) {
-    juggernaut.x = 0;
-  }
-  
-}
-*/
