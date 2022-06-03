@@ -1,7 +1,8 @@
 import {lasers} from '/earthan/bullets.ts';
 import {green} from '/brain/enemay.ts';
+//import {jug} from '/anrrew/jugger.ts';
 
-export function laserkill (laser) {
+export function greenkill (laser) {
   let distance = Math.sqrt(
     (laser.x-green.x)*(laser.x-green.x)
     +
@@ -16,3 +17,20 @@ export function laserkill (laser) {
   lasers.splice(laser,1)
   }
 };
+
+/* export function jugkill (laser) {
+  let distance = Math.sqrt(
+    (laser.x-jug.x)*(laser.x-jug.x)
+    +
+    (laser.y-jug.y)*(laser.y-jug.y)
+  )
+  console.log(distance);
+  if(distance <=75)
+  {let kill = Math.random()*1.5
+   if(kill<=1){
+    jug.x= 0
+   jug.y = Math.random()*(650-128)}
+  lasers.splice(laser,1)
+  }
+};
+*/
