@@ -41,7 +41,7 @@ export function makeLaser () {
   let laser =  {
     x:alpha.x + 1123,
     y: alpha.y + 37.5,
-    speed:5,
+    speed:20,
     damage: damage
   }
   lasers.push(laser);
