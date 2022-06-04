@@ -1,6 +1,6 @@
 import {lasers} from '/earthan/bullets.ts';
 import {green} from '/brain/enemay.ts';
-//import {jug} from '/anrrew/jugger.ts';
+import {jug} from '/anrrew/jugger.ts';
 
 export function greenkill (laser) {
   let distance = Math.sqrt(
@@ -18,7 +18,7 @@ export function greenkill (laser) {
   }
 };
 
-/* export function jugkill (laser) {
+export function jugkill (laser) {
   let distance = Math.sqrt(
     (laser.x-jug.x)*(laser.x-jug.x)
     +
@@ -33,4 +33,3 @@ export function greenkill (laser) {
   lasers.splice(laser,1)
   }
 };
-*/
