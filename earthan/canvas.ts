@@ -6,7 +6,7 @@ export let eCanvas = document.createElement('canvas')
 export let jugCanvas = document.createElement('canvas')
 export let bCanvas = document.createElement('canvas')
 export let uiCanvas = document.createElement('canvas')
-
+export let dreCanvas = document.createElement('canvas')
 
 app.appendChild(bgCanvas);
 app.appendChild(pCanvas);
@@ -14,6 +14,7 @@ app.appendChild(eCanvas)
 app.appendChild(jugCanvas);
 app.appendChild(bCanvas);
 app.appendChild(uiCanvas);
+app.appendChild(dreCanvas);
 
 export function setupCanvas(canvas:HTMLCanvasElement){
 canvas.width = 1500;
@@ -37,6 +38,8 @@ export let bctx = bCanvas.getContext('2d')
 export let uictx = uiCanvas.getContext('2d')
 export let ectx = eCanvas.getContext('2d')
 export let jugctx = jugCanvas.getContext('2d')
+export let drectx = dreCanvas.getContext('2d')
+
 pCanvas.style.width = '375px'
 pCanvas.style.height = '650px'
 pCanvas.height = 650
@@ -51,4 +54,5 @@ setupCanvas(eCanvas)
 setupCanvas(bCanvas)
 setupCanvas(uiCanvas)
 setupCanvas(jugCanvas)
+setupCanvas(dreCanvas)
 

@@ -67,9 +67,8 @@ function updatejug(elapsed: number) {
   if (jug.x > 1000) {
     jug.x = 0;
   }
-  setInterval(function() {jug.x += -50 * elapsed / 3000}, 6000) 
-setInterval(function() {jug.x += 50 * elapsed / 3000}, 8000) 
-  
+    setInterval(function() {jug.x += -50 * elapsed / 3000}, 6000) 
+setInterval(function() {jug.x += 70 * elapsed / 3000}, 8000) 
 }
 
 
