@@ -1,5 +1,5 @@
 import jugURl from '/jacksoon/Juggernaut.png'
-import { jugCanvas, jugctx } from '/earthan/canvas.ts' 
+import { jugCanvas, jugctx } from '/earthan/canvas.ts'
 import phantogusUrl from '/anrrew/alphatm.png'
 
 let assetDiv: HTMLDivElement = document.querySelector('#assets');
@@ -16,21 +16,21 @@ export let jug = {
   x: 100,
   y: 100,
   s: 100,
-  offset : 0,
+  offset: 0,
   image: jugImage,
 };
 
-function drawjug () {
+function drawjug() {
   jugctx.resetTransform();
-  jugctx.clearRect(0,0,jugCanvas.width,jugCanvas.height);
-jugctx.drawImage(
-      jug.image,  // image to draw
-      // offset is equal to 0
-      jug.offset, 0,  // source offset
-      256, 256,  // source size
-      jug.x, jug.y, // destination offset
-      128, 128 // destination size
-      );   
+  jugctx.clearRect(0, 0, jugCanvas.width, jugCanvas.height);
+  jugctx.drawImage(
+    jug.image,  // image to draw
+    // offset is equal to 0
+    jug.offset, 0,  // source offset
+    256, 256,  // source size
+    jug.x, jug.y, // destination offset
+    128, 128 // destination size
+  );
 }
 
 
@@ -47,27 +47,34 @@ function animatejug(timestamp: number = 0) {
       startTime = timestamp;
     }
     updatejug(elapsed);
+
   }
   drawjug();
   requestAnimationFrame(animatejug)
 }
 
 setInterval(
-  function () {
+  function() {
     // rotate between 0, 64, 128, 196, etc
-    jug.offset = (jug.offset + 256) % (256*200);
+    jug.offset = (jug.offset + 256) % (256 * 200);
   },
-  9 // ms
+  45// ms
 )
 
 
 function updatejug(elapsed: number) {
-  jug.x += 50 * elapsed / 1000
+  jug.x += 20 * elapsed / 1000
   if (jug.x > 1000) {
     jug.x = 0;
   }
+  setInterval(function() {jug.x += -50 * elapsed / 3000}, 6000) 
+setInterval(function() {jug.x += 50 * elapsed / 3000}, 8000) 
   
 }
+
+
+
+
 
 jugImage.addEventListener(
   "load",

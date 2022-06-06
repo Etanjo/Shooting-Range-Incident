@@ -1,4 +1,6 @@
 /*
+
+obsolete 
 import jugURl from '/jacksoon/juggernaut.png'
 import { eCanvas, ectx } from '/earthan/canvas.ts' 
 

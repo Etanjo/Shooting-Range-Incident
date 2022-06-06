@@ -10,7 +10,7 @@ export function greenkill (laser) {
   );
   console.log(distance);
   if(distance <=75)
-  {let kill = Math.random()*1.5
+  {let kill = Math.random()*2
    if(kill<=1){
     green.x= 0
    green.y = Math.random()*(650-128)}
@@ -26,7 +26,7 @@ export function jugkill (laser) {
   )
   console.log(distance);
   if(distance <=75)
-  {let kill = Math.random()*1.5
+  {let kill = Math.random()*3
    if(kill<=1){
     jug.x= 0
    jug.y = Math.random()*(650-128)}
