@@ -63,16 +63,23 @@ setInterval(
 
 
 function updatejug(elapsed: number) {
-  jug.x += 20 * elapsed / 1000
+  if (jug.offset < 200 * 191) {
+    jug.x += 20 * elapsed / 1000
+  }
   if (jug.x > 1000) {
     jug.x = 0;
   }
-    setInterval(function() {jug.x += -50 * elapsed / 3000}, 6000) 
-setInterval(function() {jug.x += 70 * elapsed / 3000}, 8000) 
+   // setInterval(function() {jug.x += -60 * elapsed / 3000}, 6000) 
+//setInterval(function() {jug.x += 80 * elapsed / 3000}, 8000) 
 }
 
+function jugshooting () {
+  jug.offset = 191 
+}
 
-
+function jugmoving () {
+  jug.offset = 191 
+}
 
 
 jugImage.addEventListener(
