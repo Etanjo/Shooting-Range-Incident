@@ -43,7 +43,7 @@ shopTitle.style.textShadow = '2px, 2px, black'
 
 upgradeButton.addEventListener("click", function(event){
   if (player.money >= dmgButton.moneyNeeded){
-    player.damage += 0.25*damage
+    player.damage += 0.25*player.damage
     player.money-=dmgButton.moneyNeeded
     dmgButton.moneyNeeded += 0.5*dmgButton.moneyNeeded
   }

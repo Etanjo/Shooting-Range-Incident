@@ -31,8 +31,10 @@ export function jugkill (laser) {
   {let kill = Math.random()*3
    if(kill<=player.damage){
     jug.x= 0
-   jug.y = Math.random()*(650-128)}
-  lasers.splice(laser,1)
+   jug.y = Math.random()*(650-128)
    player.money += 25
+   }
+  lasers.splice(laser,1)
+   
   }
 };
