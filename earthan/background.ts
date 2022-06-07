@@ -1,6 +1,7 @@
 import {bgCanvas} from "./canvas"
-
-bgCanvas.style.backgroundImage = 'url("/earthan/range.png")'
+import {range} from "./logistics"
+import rangeUrl from "/earthan/range.png"
+bgCanvas.style.backgroundImage = `url("${rangeUrl}")`
 bgCanvas.style.backgroundPositionY = '0px'
 
 

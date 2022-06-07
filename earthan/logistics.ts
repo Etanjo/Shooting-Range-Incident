@@ -8,18 +8,21 @@ import solderUrl from '/jacksoon/solder.png'
 import JuggernautUrl from '/jacksoon/Juggernaut.png'
 import DreadnoughtUrl from '/jacksoon/Dreadnought.png'
 
-let range = rangeUrl
-let wood = woodUrl
-let alpha1 = AlphastillUrl
-let laser = laserUrl
-let bullet = bulletUrl
-let soldier = solderUrl
-let jug = JuggernautUrl
-let dread = DreadnoughtUrl
+export let range = addToAssets(rangeUrl)
+let wood = addToAssets(woodUrl)
+let alpha1 = addToAssets(AlphastillUrl)
+let laser = addToAssets(laserUrl)
+let bullet = addToAssets(bulletUrl)
+let soldier = addToAssets(solderUrl)
+let jug = addToAssets(JuggernautUrl)
+let dread = addToAssets(DreadnoughtUrl)
 let assetDiv = document.querySelector('#assets')
 
 function addToAssets(asset){
-  assetDiv.appendChild(asset)
+  let img = document.createElement('img')
+  img.setAttribute('src',asset)
+  assetDiv.appendChild(img)
+  return img
 }
 
 addToAssets(range)

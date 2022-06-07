@@ -1,5 +1,7 @@
 import {app} from "./canvas"
 import {damage} from './bullets'
+import {uiCanvas, uictx} from './canvas'
+import woodUrl from '.earthan/wood.png'
 export let shopTitle = document.createElement('text')
 export let upgradeButton = document.createElement('button')
 export let upgradeHealth = document.createElement('button')
@@ -7,13 +9,15 @@ export let health = 10
 app.appendChild (shopTitle)
 app.appendChild(upgradeButton)
 
-export var money: 0
-export let dmgMoneyNeeded = 1000
+
 
 let player = {
   money : 0,
   health : 1,
   damage : 1,
+}
+let dmgButton = {
+  moneyNeeded : 1000
 }
 
 
@@ -37,9 +41,9 @@ shopTitle.style.borderStyle = "solid"
 shopTitle.style.textShadow = '2px, 2px, black'
 
 upgradeButton.addEventListener("click", function(event){
-  if (money >= dmgMoneyNeeded){
-    damage += 0.5*damage
-    money-=dmgMoneyNeeded
+  if (player.money >= dmgButton.moneyNeeded){
+    player.damage += 0.25*damage
+    player.money-=dmgButton.moneyNeeded
     dmgMoneyNeeded += 0.5*dmgMoneyNeeded
   }
 })
