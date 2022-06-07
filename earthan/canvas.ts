@@ -12,9 +12,10 @@ app.appendChild(bgCanvas);
 app.appendChild(pCanvas);
 app.appendChild(eCanvas)
 app.appendChild(jugCanvas);
+app.appendChild(dreCanvas);
 app.appendChild(bCanvas);
 app.appendChild(uiCanvas);
-app.appendChild(dreCanvas);
+
 
 export function setupCanvas(canvas:HTMLCanvasElement){
 canvas.width = 1500;

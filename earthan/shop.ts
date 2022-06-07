@@ -10,6 +10,12 @@ app.appendChild(upgradeButton)
 export var money: 0
 export let dmgMoneyNeeded = 1000
 
+let player = {
+  money : 0,
+  health : 1,
+  damage : 1,
+}
+
 
 upgradeButton.style.left = "1550px"
 upgradeButton.style.position = "absolute"

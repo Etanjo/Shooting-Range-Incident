@@ -1,6 +1,7 @@
 import {lasers} from '/earthan/bullets.ts';
 import {green} from '/brain/enemay.ts';
 import {jug} from '/anrrew/jugger.ts';
+import {player} from '/earthan/shop.ts'
 
 export function greenkill (laser) {
   let distance = Math.sqrt(
