@@ -29,7 +29,7 @@ upgradeButton.style.width = '125px'
 upgradeButton.style.height = '50px'
 upgradeButton.style.background = `url("${woodUrl}")`
 upgradeButton.style.color = "White"
-upgradeButton.innerText = "Upgrade Weapon"
+
 
 shopTitle.style.left = '1600px'
 shopTitle.style.position = "absolute"
@@ -46,6 +46,9 @@ upgradeButton.addEventListener("click", function(event){
     player.damage += 0.25*player.damage
     player.money-=dmgButton.moneyNeeded
     dmgButton.moneyNeeded += 0.5*dmgButton.moneyNeeded
+    dmgButton.moneyNeeded = Math.round(dmgButton.moneyNeeded)
+    player.money = Math.round(player.money)
+    
   }
 })
 
@@ -55,7 +58,8 @@ function updateMoney(){
   uictx.beginPath()
   uictx.strokeStyle = "black"
     uictx.strokeStyle = '20px'
-  uictx.strokeText(`Money = ${player.money}`, 1400, 640)
+  uictx.strokeText(`Amount of Bart Bucks = ${player.money}`, 1350, 640)
+    upgradeButton.innerText = `Upgrade Damage for ${dmgButton.moneyNeeded} Bart Bucks`
   uictx.stroke()
   requestAnimationFrame(updateMoney)
   }

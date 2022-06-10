@@ -24,11 +24,11 @@ assetDiv.appendChild(laserImage)
 export let lasers = []
 export let bullets = []
 
-export function makeBullet(){
+export function makeBullet(x, y){
   
   let bullet = {
-  x:green.x,
-  y : green.y,
+  x: x,
+  y : y,
   speed: 5,
   type: 1,
 }
