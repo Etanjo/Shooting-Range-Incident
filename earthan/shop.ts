@@ -3,65 +3,34 @@ import {damage} from './bullets'
 import {uiCanvas, uictx} from './canvas'
 import {game} from './logistics'
 import woodUrl from '/earthan/wood.png'
-export let shopTitle = document.createElement('text')
-export let upgradeButton = document.createElement('button')
-export let upgradeHealth = document.createElement('button')
-export let health = 10
-app.appendChild (shopTitle)
-app.appendChild(upgradeButton)
-
-
 
 export let player = {
-  money : 0,
+  money : 9000,
   health : 1,
   damage : 1,
 }
-let dmgButton = {
-  moneyNeeded : 1000
+let dmg = {
+  moneyNeeded : 1000,
+  button: document.querySelector("#dmg")
 }
 
-
-upgradeButton.style.left = "1550px"
-upgradeButton.style.position = "absolute"
-upgradeButton.style.top = '220px'
-upgradeButton.style.width = '125px'
-upgradeButton.style.height = '50px'
-upgradeButton.style.background = `url("${woodUrl}")`
-upgradeButton.style.color = "White"
-
-
-shopTitle.style.left = '1600px'
-shopTitle.style.position = "absolute"
-shopTitle.style.background = `url(${woodUrl})`
-shopTitle.innerText = "Bart Jenkins' Shop"
-shopTitle.style.width = "300px"
-shopTitle.style.borderBottomColor = "black"
-shopTitle.style.borderBottomWidth = "5px"
-shopTitle.style.borderStyle = "solid"
-shopTitle.style.textShadow = '2px, 2px, black'
-
-upgradeButton.addEventListener("click", function(event){
-  if (player.money >= dmgButton.moneyNeeded){
+dmg.button.addEventListener("click", function(event){
+  if (player.money >= dmg.moneyNeeded){
     player.damage += 0.25*player.damage
-    player.money-=dmgButton.moneyNeeded
-    dmgButton.moneyNeeded += 0.5*dmgButton.moneyNeeded
-    dmgButton.moneyNeeded = Math.round(dmgButton.moneyNeeded)
+    player.money-=dmg.moneyNeeded
+    dmg.moneyNeeded += 0.5*dmg.moneyNeeded
+    dmg.moneyNeeded = Math.round(dmg.moneyNeeded)
     player.money = Math.round(player.money)
     
   }
 })
 
-function updateMoney(){
+let moneyCount = document.querySelector('#moneyCount')
+function updateScores(){
   if (game.state == 2){
-  uictx.clearRect(0,0,uiCanvas.width, uiCanvas.height)
-  uictx.beginPath()
-  uictx.strokeStyle = "black"
-    uictx.strokeStyle = '20px'
-  uictx.strokeText(`Amount of Bart Bucks = ${player.money}`, 1350, 640)
-    upgradeButton.innerText = `Upgrade Damage for ${dmgButton.moneyNeeded} Bart Bucks`
-  uictx.stroke()
-  requestAnimationFrame(updateMoney)
+  moneyCount.innerText = `Bart Bucks: ${player.money}`
+  dmg.button.innerText = `Upgrade Damage for ${dmg.moneyNeeded} Bart Bucks`
+  requestAnimationFrame(updateScores)
   }
 }
-updateMoney()
+updateScores()

@@ -69,6 +69,7 @@ export function animategreen(timestamp: number = 0) {
     updategreen(elapsed);
   }
   drawgreenImage();
+  
   requestAnimationFrame(animategreen)
 }
 

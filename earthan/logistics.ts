@@ -9,7 +9,7 @@ import JuggernautUrl from '/jacksoon/Juggernaut.png'
 import DreadnoughtUrl from '/jacksoon/Dreadnought.png'
 
 export let game = {
-  loading : true,
+  loading : false,
   state : 2, //game states: 1 means it hasn't started, 2 is mid-game, and 3 is post-game
   loads: 10, // loads = how many things need to load
   
@@ -35,7 +35,7 @@ function updateGame(){
   if (game.loads == 0){
     game.loading = false
   }
-  if (game.loading = true){
+  if (game.loading == true){
     drawLoad()
   } else
     if(game.state == 1){

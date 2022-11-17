@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -5,26 +7,61 @@
   text-align: center;
   color: #ffffff;
   margin-top: 60px;
-}
-#shoptitle {
-  text-align: right;
-  background: transparent;
+  grid-area: game;
+  width: 1500px;
+  height: 650px;
 }
 
-#instructions{
-  margin-top: 720px;
-  text-align: left;
-  font-family: monospace, lucida-console;
-  color: #006666;
-  width: 750px;
-  font-size: 30px;
-  background: white;
-  opacity: 45%
+body{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "game shop"
   
 }
 
 html{
- background: linear-gradient(140deg, rgba(174,174,177,1) 0%, rgba(29,29,29,1) 51%, rgba(167,36,36,1) 100%);
+ background-color: #cbc8c8;
 
 
+}
+h1{
+  text-align: center;
+  
+}
+#shop{
+  color: white;
+  width: 400px;
+  right: 0;
+  grid-area: shop;
+  background-image: url('/earthan/wood.png');
+  font-family: 'Kalam', cursive;
+}
+.upgrade{
+  width: 80px;
+  background-color: #8f7756;
+  color: white;
+  font-family: 'Kalam', cursive;
+  margin: 5px;
+}
+
+  
+
+header{
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  color: #3e3d3d;
+  font-family: 'Rajdhani', sans-serif;
+  align-items: baseline;
+}
+header a{
+  text-decoration: none;
+  color: #363653;
+  font-weight: bold;
+}
+header a:hover{
+  background-color: #363653aa;
+  border-radius: 2px;
+  color: white;
 }
