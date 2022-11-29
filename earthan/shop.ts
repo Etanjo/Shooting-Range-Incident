@@ -5,7 +5,7 @@ import {game} from './logistics'
 import woodUrl from '/earthan/wood.png'
 
 export let player = {
-  money : 9000,
+  money : 0,
   health : 1,
   damage : 1,
 }
