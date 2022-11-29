@@ -118,3 +118,5 @@ animateShots()
 
   updateScores()
 }
+
+//export function 

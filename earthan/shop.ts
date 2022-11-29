@@ -8,6 +8,10 @@ export let player = {
   money : 0,
   health : 1,
   damage : 1,
+  score: 0,
+  scoreStage: 0,
+  maxScoreStage: 60,
+  scoreIncrement: 1
 }
 let dmg = {
   moneyNeeded : 1000,
@@ -26,12 +30,20 @@ dmg.button.addEventListener("click", function(event){
 })
 
 let moneyCount = document.querySelector('#moneyCount')
+let scoreText = document.querySelector('#score')
 export function updateScores(){
   
-  moneyCount.innerText = `Bart Bucks: ${player.money}`
-  dmg.button.innerText = `Upgrade Damage for ${dmg.moneyNeeded} Bart Bucks`
+  moneyCount.innerHTML = `Bart Bucks: ${player.money}`
+  scoreText.innerHTML=`Total Score: ${player.score}`
+  dmg.button.innerHTML = `Upgrade Damage for ${dmg.moneyNeeded} Bart Bucks`
+  player.scoreStage += player.scoreIncrement
+  if(player.scoreStage == player.maxScoreStage){
+    player.score += 1
+    player.scoreStage = 0
+  }
   if (game.state == 2){
   requestAnimationFrame(updateScores)
   }
+  
 }
 updateScores()

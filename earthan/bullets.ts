@@ -2,10 +2,10 @@ import {bCanvas} from './canvas'
 import {bctx} from './canvas'
 import bulletUrl from './bullet.png';
 import laserUrl from './laser.png'
-import {alpha} from "/anrrew/movement"
-import {greenkill, jugkill} from '/anrrew/getshot'
+import {alpha} from "../anrrew/movement"
+import {greenkill, jugkill, playerKill} from '../anrrew/getshot'
 import {money} from './shop'
-import {green} from '/brain/enemay'
+import {green} from '../brain/enemay'
 import {game} from './logistics'
 
 let assetDiv : HTMLDivElement = document.querySelector('#assets');
@@ -58,6 +58,7 @@ function updateBullet(bullet){
 
 function drawBullet(bullet){
   bctx.drawImage(bulletImage, bullet.x, bullet.y)
+
 }
 
 function updateLaser(laser){
@@ -81,6 +82,7 @@ lasers.forEach(greenkill)
 lasers.forEach(jugkill)
 bullets.forEach(updateBullet)
 bullets.forEach(drawBullet)
+bullets.forEach(playerKill)
   if(game.state == 2){
 requestAnimationFrame(animateShots)
   }

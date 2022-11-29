@@ -1,7 +1,9 @@
-import {lasers} from '/earthan/bullets';
-import {green} from '/brain/enemay';
-import {jug} from '/anrrew/jugger';
-import {player} from '/earthan/shop'
+import {lasers} from '../earthan/bullets';
+import {green} from '../brain/enemay';
+import {jug} from './jugger';
+import {player} from '../earthan/shop'
+import {alpha} from './movement'
+import {game} from '../earthan/logistics'
 
 export function greenkill (laser) {
   let distance = Math.sqrt(
@@ -14,9 +16,12 @@ export function greenkill (laser) {
   {let kill = Math.random()*2
    if(kill<=player.damage){
     green.x= 0
-   green.y = Math.random()*(650-128)}
+   green.y = Math.random()*(650-128)
+   player.money += 10
+   player.score+=10
+  }
   lasers.splice(laser,1)
-  player.money += 10
+  
   }
 };
 
@@ -33,8 +38,17 @@ export function jugkill (laser) {
     jug.x= 0
    jug.y = Math.random()*(650-128)
    player.money += 25
+   player.score +=25
    }
   lasers.splice(laser,1)
    
   }
 };
+
+export function playerKill(bullet){
+  console.log(bullet.x - 1125)
+  if(bullet.x - 1125 > alpha.x && bullet.y < alpha.y && bullet.x >alpha.x+96 && bullet.x - 1125 >alpha.y+96){
+    console.log('hit!')
+    game.state = 3
+  }
+}
