@@ -1,8 +1,8 @@
-
+import {game} from '../earthan/logistics'
 import greenURL from '/jacksoon/solder.png';
 
 //import {greenImage} from '/brain/testfile.ts'
-import { eCanvas, ectx } from '/earthan/canvas.ts'
+import { eCanvas, ectx } from '../earthan/canvas'
 
 let assetDiv: HTMLDivElement = document.querySelector('#assets');
 
@@ -71,12 +71,10 @@ export function animategreen(timestamp: number = 0) {
   drawgreenImage();
   
   requestAnimationFrame(animategreen)
+
 }
 
-greenImage.addEventListener(
-  "load",
-  function() { animategreen() }
-);
+
 
 
 export function updategreen(elapsed: number) {

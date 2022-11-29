@@ -3,7 +3,7 @@ import {jug} from '/anrrew/jugger.ts'
 import {green} from '/brain/enemay.ts'
 import {game} from '/earthan/logistics.ts'
 
-function drawSquare (x,y){
+/*function drawSquare (x,y){
     if(green.x=500)
   uictx.beginPath();
   uictx.moveTo(x,y);
@@ -16,4 +16,4 @@ function drawSquare (x,y){
   uictx.stroke();
 }
 
-drawSquare;
+drawSquare;*/

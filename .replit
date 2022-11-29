@@ -28,4 +28,4 @@ enabledForHosting = false
 pattern = "**/{*.js,*.jsx,*.ts,*.tsx}"
 
 [languages.javascript.languageServer]
-start = "./node_modules/.bin/typescript-language-server --stdio"
+start = "typescript-language-server --stdio"

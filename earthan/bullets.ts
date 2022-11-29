@@ -6,6 +6,7 @@ import {alpha} from "/anrrew/movement"
 import {greenkill, jugkill} from '/anrrew/getshot'
 import {money} from './shop'
 import {green} from '/brain/enemay'
+import {game} from './logistics'
 
 let assetDiv : HTMLDivElement = document.querySelector('#assets');
 
@@ -72,7 +73,7 @@ function drawLaser(laser){
   bctx.drawImage(laserImage, laser.x, laser.y)
 }
 
-function animateShots(){
+export function animateShots(){
  bctx.clearRect(0,0,bCanvas.width, bCanvas.height)
 lasers.forEach(updateLaser)
 lasers.forEach(drawLaser)
@@ -80,18 +81,11 @@ lasers.forEach(greenkill)
 lasers.forEach(jugkill)
 bullets.forEach(updateBullet)
 bullets.forEach(drawBullet)
-  
+  if(game.state == 2){
 requestAnimationFrame(animateShots)
+  }
 }
 
 
-document.addEventListener('keyup', function(event){
-  if(event.key == 'e'){
-    //shots.push(laser)
-    makeLaser()
-    console.log(lasers)
-       //animateShots()
-  }
-})
-animateShots()
+
 

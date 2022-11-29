@@ -36,7 +36,7 @@ function drawjug() {
 
 let startTime = null;
 
-function animatejug(timestamp: number = 0) {
+export function animatejug(timestamp: number = 0) {
   let elapsed;
   if (timestamp) {
     if (!startTime) {
@@ -62,7 +62,7 @@ setInterval(
 )
 
 
-function updatejug(elapsed: number) {
+export function updatejug(elapsed: number) {
   if (jug.offset < 200 * 191) {
     jug.x += 20 * elapsed / 1000
   }
@@ -81,8 +81,3 @@ function jugmoving () {
   jug.offset = 191 
 }
 
-
-jugImage.addEventListener(
-  "load",
-  function() { animatejug() }
-);

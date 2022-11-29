@@ -1,22 +1,27 @@
 import {green} from '/brain/enemay'
 import {makeBullet} from './bullets'
-import {jug} from '/anrrew/jugger'
+import {jug} from '../anrrew/jugger'
+import {game} from './logistics'
 
 export function greenShoot(){
    let shoot = Math.random()*275
   if(shoot <= 1){
     makeBullet(green.x, green.y)
   }
+  if(game.state == 2){
   requestAnimationFrame(greenShoot)
+  }
 }
-greenShoot()
+
 
 export function jugShoot(){
   let shoot = Math.random()*150
   if(shoot<=1){
     makeBullet(jug.x,jug.y)
   }
+  if(game.state == 2){
   requestAnimationFrame(jugShoot)
+  }
 }
-jugShoot()
+
   

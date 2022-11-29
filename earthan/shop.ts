@@ -26,10 +26,11 @@ dmg.button.addEventListener("click", function(event){
 })
 
 let moneyCount = document.querySelector('#moneyCount')
-function updateScores(){
-  if (game.state == 2){
+export function updateScores(){
+  
   moneyCount.innerText = `Bart Bucks: ${player.money}`
   dmg.button.innerText = `Upgrade Damage for ${dmg.moneyNeeded} Bart Bucks`
+  if (game.state == 2){
   requestAnimationFrame(updateScores)
   }
 }
