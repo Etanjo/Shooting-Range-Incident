@@ -22,6 +22,7 @@ assetDiv.appendChild(bartenderImage)
 
 
 import { pCanvas } from '/earthan/canvas.ts'
+import { pctx } from '../earthan/canvas';
 
 export let alpha = {
   x: 100,
@@ -43,7 +44,7 @@ function drawalpha() {
   )
 }
 
-function updatealpha(elapsed: number) {
+function updatealpha(/*elapsed: number*/) {
 
   if (alpha.y < -50) {
     alpha.y = 325;
@@ -59,19 +60,8 @@ function updatealpha(elapsed: number) {
   }
 }
 
-function animatealpha(timestamp: number = 0) {
-  let elapsed
-  if (timestamp) {
-    if (!startTime) {
-      startTime = timestamp;
-      elapsed = 0;
-    } else {
-      elapsed = timestamp - startTime
-      startTime = timestamp;
-    }
-    (elapsed);
-    updatealpha(elapsed);
-  }
+function animatealpha(/*timestamp: number = 0*/) {
+  pctx.clearRect(0,0,pCanvas.width,pCanvas.height)
   drawalpha();
   requestAnimationFrame(animatealpha)
 };

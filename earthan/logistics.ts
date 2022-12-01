@@ -7,11 +7,11 @@ import bulletUrl from '../earthan/bullet.png'
 import solderUrl from '../jacksoon/solder.png'
 import JuggernautUrl from '../jacksoon/Juggernaut.png'
 import DreadnoughtUrl from '../jacksoon/Dreadnought.png'*/
-import {jug, animatejug, jugImage} from '../anrrew/jugger'
+import {jug, animatejug, jugImage, jugAnimation} from '../anrrew/jugger'
 import {animateShots, lasers, bullets, makeLaser} from './bullets'
 import {jugShoot, greenShoot} from './enemyshoot'
 import {showNextFrame} from './background'
-import {green, greenImage, animategreen} from '../brain/enemay'
+import {green, greenImage, animategreen, greenAnimation} from '../brain/enemay'
 import {updateScores} from './shop'
 
 
@@ -109,14 +109,17 @@ animatejug()
 greenShoot()
 jugShoot()
   
-animateShots()
-  setInterval( // run forever on a timer
-  showNextFrame,
-  1000 / 12 // 12 times per second
-)
+  animateShots()
+
   animategreen() 
 
   updateScores()
+
+  let greenInterval = setInterval(greenAnimation,180)
+
+  let jugInterval = setInterval(jugAnimation, 45)
+
+  let bgInterval = setInterval(showNextFrame, 1000/12)
 }
 
 //export function 

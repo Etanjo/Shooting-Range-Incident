@@ -4,7 +4,7 @@ import bulletUrl from './bullet.png';
 import laserUrl from './laser.png'
 import {alpha} from "../anrrew/movement"
 import {greenkill, jugkill, playerKill} from '../anrrew/getshot'
-import {money} from './shop'
+import {player} from './shop'
 import {green} from '../brain/enemay'
 import {game} from './logistics'
 

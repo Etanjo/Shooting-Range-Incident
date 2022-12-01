@@ -47,7 +47,7 @@ export function jugkill (laser) {
 
 export function playerKill(bullet){
   console.log(bullet.x - 1125)
-  if(bullet.x - 1125 > alpha.x && bullet.y < alpha.y && bullet.x >alpha.x+96 && bullet.x - 1125 >alpha.y+96){
+  if(bullet.x - 1125 > alpha.x && bullet.y+5 > alpha.y && bullet.x - 1125 < alpha.x+130 && bullet.y+5 < alpha.y+130){
     console.log('hit!')
     game.state = 3
   }

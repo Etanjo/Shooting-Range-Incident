@@ -46,13 +46,11 @@ export let green = {
   image: greenImage,
 };
 
-setInterval(
-  function() {
-    // rotate between 0, 64, 128, 196, etc
-    green.offset = (green.offset + 256) % (256 * 4);
-  },
-  180 // ms
-)
+
+
+export function greenAnimation(){
+  green.offset = (green.offset + 256) % (256 * 4);
+}
 
 let startTime = null;
 
@@ -85,34 +83,3 @@ export function updategreen(elapsed: number) {
   }
 
 }
-
-
-/*
-function let () {
-
-}
-/*
-function animateCanvas() {
-
-}
-
-
-
-
-let div = document.querySelector('#sprite');
-
-let frame = 0;
-let nframes = 8;
-let size = 64;
-
-function showNextFrame() {
-  frame = (frame + 1) % nframes;
-  let offset = frame * size;
-  div.style.backgroundPosition = `-${offset}px`;
-}
-
-setInterval(
-  showNextFrame,
-  1000 / 12
-)
-*/

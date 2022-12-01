@@ -53,13 +53,11 @@ export function animatejug(timestamp: number = 0) {
   requestAnimationFrame(animatejug)
 }
 
-setInterval(
-  function() {
-    // rotate between 0, 64, 128, 196, etc
-    jug.offset = (jug.offset + 256) % (256 * 200);
-  },
-  45// ms
-)
+export function jugAnimation(){
+  jug.offset = (jug.offset + 256) % (256 * 200);
+}
+
+
 
 
 export function updatejug(elapsed: number) {
