@@ -3,7 +3,7 @@ import {green} from '../brain/enemay';
 import {jug} from './jugger';
 import {player} from '../earthan/shop'
 import {alpha} from './movement'
-import {game, endGame} from '../earthan/logistics'
+import {game, endGame, drawShotEndScreen} from '../earthan/logistics'
 
 export function greenkill (laser) {
   let distance = Math.sqrt(
@@ -51,5 +51,6 @@ export function playerKill(bullet){
     console.log('hit!')
     game.state = 3
     setTimeout(endGame, 120)
+    drawShotEndScreen()
   }
 }

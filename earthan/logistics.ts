@@ -12,7 +12,7 @@ import {animateShots, lasers, bullets, makeLaser} from './bullets'
 import {jugShoot, greenShoot} from './enemyshoot'
 import {showNextFrame} from './background'
 import {green, greenImage, animategreen, greenAnimation} from '../brain/enemay'
-import {animatealpha} from '../anrrew/movement'
+import {animatealpha, alpha} from '../anrrew/movement'
 
 let greenInterval
 let jugInterval
@@ -25,7 +25,7 @@ export let game = {
   
 }
 
-import {updateScores} from './shop'
+import {player, updateScores, dmg} from './shop'
 
 function drawLoad(){
   uictx.beginPath
@@ -144,10 +144,62 @@ ectx?.clearRect(0,0, eCanvas.width, eCanvas.height)
 pctx?.clearRect(0,0, pCanvas.width, pCanvas.height)
 bctx?.clearRect(0,0, bCanvas.width, bCanvas.height)
 jugctx?.clearRect(0,0, jugCanvas.width, jugCanvas.height)
-bullets.forEach(bulletRemove)
-lasers.forEach(laserRemove)
+bullets.splice(0, bullets.length)
+lasers.splice(0, lasers.length)
 }
 
-export function drawShotEndScreen(){
+let restartListener = 0
 
+export function drawShotEndScreen(){
+  uictx.beginPath()
+  uictx.fillStyle = 'black'
+  uictx.fillRect(0,0,uiCanvas.width,uiCanvas.height)
+  uictx.font = "50px Rajdhani"
+  uictx.textAlign = "center"
+  uictx.strokeStyle = "DarkRed"
+  uictx.fillStyle = "DarkRed"
+  uictx.strokeText("Agent Alpha KIA", uiCanvas.width/2,50)
+  uictx.fillText("Agent Alpha KIA", uiCanvas.width/2,50)
+  uictx.strokeText("Cause of Death: Bullet Wound", uiCanvas.width/2,101)
+  uictx.fillText("Cause of Death: Bullet Wound", uiCanvas.width/2,101)
+  uictx?.beginPath
+  uictx.font = "25px Rajdhani"
+  uictx.textAlign = "center"
+  uictx.fillStyle = "DarkRed"
+  uictx.strokeStyle = "DarkRed"
+  uictx?.strokeText(`End Score: ${player.score}`, uiCanvas.width/2, 127)
+  uictx?.fillText(`End Score: ${player.score}`, uiCanvas.width/2, 127)
+  uictx.beginPath()
+  uictx.fillStyle = 'DarkRed'
+  uictx.font = "50px Rajdhani"
+  uictx.textAlign  = 'center'
+  uictx.strokeStyle = 'GhostWhite'
+  uictx.strokeText("Press R to Restart",uiCanvas.width/2,uiCanvas.height-50)
+  uictx.fillText("Press R to Restart",uiCanvas.width/2,uiCanvas.height-50)
+  if(restartListener < 1){
+    window.addEventListener('keydown', function(event){
+      if(event.key == 'r' && game.state == 3){
+        restartGame()
+      }
+
+    })
+    restartListener +=1
+  }
+}
+
+function restartGame(){
+player.score = 0
+player.scoreStage = 0
+alpha.x = 100
+alpha.y = 100
+green.x = 100
+green.y = 160
+jug.x = 100
+jug.y = 100
+player.money = 0
+player.damage = 1
+dmg.moneyNeeded = 1000
+uictx.clearRect(0,0,uiCanvas.width,uiCanvas.height)
+game.state = 2
+  gameStartup()
 }

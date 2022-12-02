@@ -40,7 +40,7 @@ function drawgreenImage() {
 export let green = {
 
   x: 100,
-  y: 100,
+  y: 160,
   s: 100,
   offset: 0,
   image: greenImage,
