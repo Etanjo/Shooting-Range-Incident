@@ -3,7 +3,7 @@ import {green} from '../brain/enemay';
 import {jug} from './jugger';
 import {player} from '../earthan/shop'
 import {alpha} from './movement'
-import {game} from '../earthan/logistics'
+import {game, endGame} from '../earthan/logistics'
 
 export function greenkill (laser) {
   let distance = Math.sqrt(
@@ -50,5 +50,6 @@ export function playerKill(bullet){
   if(bullet.x - 1125 > alpha.x && bullet.y+5 > alpha.y && bullet.x - 1125 < alpha.x+130 && bullet.y+5 < alpha.y+130){
     console.log('hit!')
     game.state = 3
+    setTimeout(endGame, 120)
   }
 }

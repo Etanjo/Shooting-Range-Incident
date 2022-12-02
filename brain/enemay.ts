@@ -49,7 +49,9 @@ export let green = {
 
 
 export function greenAnimation(){
+  if (game.state == 2){
   green.offset = (green.offset + 256) % (256 * 4);
+  }
 }
 
 let startTime = null;
@@ -67,8 +69,9 @@ export function animategreen(timestamp: number = 0) {
     updategreen(elapsed);
   }
   drawgreenImage();
-  
-  requestAnimationFrame(animategreen)
+  if(game.state == 2){
+    requestAnimationFrame(animategreen)
+  }
 
 }
 

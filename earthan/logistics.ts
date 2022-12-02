@@ -1,4 +1,4 @@
-import {uiCanvas, uictx} from "./canvas"
+import {eCanvas, ectx, uiCanvas, uictx, bCanvas, bctx, pCanvas, pctx, jugCanvas, jugctx} from "./canvas"
 /*import rangeUrl from "/earthan/range.png"
 import woodUrl from '/earthan/wood.png'
 import AlphastillUrl from '/jacksoon/Alphastill.png'
@@ -12,8 +12,11 @@ import {animateShots, lasers, bullets, makeLaser} from './bullets'
 import {jugShoot, greenShoot} from './enemyshoot'
 import {showNextFrame} from './background'
 import {green, greenImage, animategreen, greenAnimation} from '../brain/enemay'
-import {updateScores} from './shop'
+import {animatealpha} from '../anrrew/movement'
 
+let greenInterval
+let jugInterval
+let bgInterval
 
 export let game = {
   loading : false,
@@ -21,6 +24,8 @@ export let game = {
   loads: 10, // loads = how many things need to load
   
 }
+
+import {updateScores} from './shop'
 
 function drawLoad(){
   uictx.beginPath
@@ -95,6 +100,7 @@ function updateGame(){
 
 
 function gameStartup(){
+  animatealpha()
 animatejug()
   
   document.addEventListener('keyup', function(event){
@@ -115,11 +121,33 @@ jugShoot()
 
   updateScores()
 
-  let greenInterval = setInterval(greenAnimation,180)
+  greenInterval = setInterval(greenAnimation,180)
 
-  let jugInterval = setInterval(jugAnimation, 45)
+  jugInterval = setInterval(jugAnimation, 45)
 
-  let bgInterval = setInterval(showNextFrame, 1000/12)
+  bgInterval = setInterval(showNextFrame, 1000/12)
 }
 
-//export function 
+function laserRemove(laser){
+  lasers.splice(laser, 1)
+}
+
+function bulletRemove(bullet){
+  bullets.splice(bullet, 1)
+}
+
+export function endGame(){
+clearInterval(greenInterval)
+clearInterval(jugInterval)
+clearInterval(bgInterval)
+ectx?.clearRect(0,0, eCanvas.width, eCanvas.height)
+pctx?.clearRect(0,0, pCanvas.width, pCanvas.height)
+bctx?.clearRect(0,0, bCanvas.width, bCanvas.height)
+jugctx?.clearRect(0,0, jugCanvas.width, jugCanvas.height)
+bullets.forEach(bulletRemove)
+lasers.forEach(laserRemove)
+}
+
+export function drawShotEndScreen(){
+
+}

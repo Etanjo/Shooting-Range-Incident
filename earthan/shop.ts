@@ -1,7 +1,7 @@
+import {game} from './logistics'
 import {app} from "./canvas"
 import {damage} from './bullets'
 import {uiCanvas, uictx} from './canvas'
-import {game} from './logistics'
 import woodUrl from '/earthan/wood.png'
 
 export let player = {
@@ -46,4 +46,3 @@ export function updateScores(){
   }
   
 }
-updateScores()

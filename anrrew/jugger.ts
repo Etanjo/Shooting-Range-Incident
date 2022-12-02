@@ -1,6 +1,7 @@
 import jugURl from '/jacksoon/Juggernaut.png'
 import { jugCanvas, jugctx } from '/earthan/canvas.ts'
 import phantogusUrl from '/anrrew/alphatm.png'
+import { game } from '../earthan/logistics';
 
 let assetDiv: HTMLDivElement = document.querySelector('#assets');
 
@@ -50,7 +51,9 @@ export function animatejug(timestamp: number = 0) {
 
   }
   drawjug();
+  if(game.state == 2){
   requestAnimationFrame(animatejug)
+  }
 }
 
 export function jugAnimation(){

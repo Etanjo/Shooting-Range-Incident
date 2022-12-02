@@ -1,6 +1,6 @@
 
 //import alphaUrl from '/jacksoon/alpha.png';
-
+import {game} from '../earthan/logistics'
 import alphaUrl from '/jacksoon/Alphastill.png'
 
 let assetDiv: HTMLDivElement = document.querySelector('#assets');
@@ -60,10 +60,12 @@ function updatealpha(/*elapsed: number*/) {
   }
 }
 
-function animatealpha(/*timestamp: number = 0*/) {
+export function animatealpha() {
   pctx.clearRect(0,0,pCanvas.width,pCanvas.height)
   drawalpha();
-  requestAnimationFrame(animatealpha)
+  if(game.state == 2) { 
+    requestAnimationFrame(animatealpha)
+  }
 };
 
 window.addEventListener(
@@ -84,7 +86,7 @@ window.addEventListener(
     }
   }
 )
-animatealpha()
+
 
 /*
 let div = document.querySelector("div");
