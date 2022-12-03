@@ -4,7 +4,7 @@ import {jug} from '../anrrew/jugger'
 import {game} from './logistics'
 
 export function greenShoot(){
-   let shoot = Math.random()*275
+   let shoot = Math.random()*600
   if(shoot <= 1){
     makeBullet(green.x, green.y)
   }
