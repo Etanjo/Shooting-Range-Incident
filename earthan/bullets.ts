@@ -8,6 +8,7 @@ import {player} from './shop'
 import {green} from '../brain/enemay'
 import {game} from './logistics'
 
+
 let assetDiv : HTMLDivElement = document.querySelector('#assets');
 
 export var damage 
@@ -30,7 +31,7 @@ export function makeBullet(x, y){
   let bullet = {
   x: x,
   y : y,
-  speed: 3,
+  speed: 5,
   type: 1,
 }
   bullets.push(bullet)
@@ -50,9 +51,10 @@ export function makeLaser () {
 }
 
 
+let startTime = null;
 
-function updateBullet(bullet){
-  bullet.x += bullet.speed
+function updateBullet(bullet, elapsed: number){
+  bullet.x += (bullet.speed*(60/game.framerate))
   
 }
 
@@ -61,8 +63,8 @@ function drawBullet(bullet){
 
 }
 
-function updateLaser(laser){
-  laser.x -= laser.speed
+function updateLaser(laser, elapsed: number){
+  laser.x -= (laser.speed*(60/game.framerate))
   if(laser.x < -5){
     lasers.splice(laser, 1)
   }
@@ -75,6 +77,7 @@ function drawLaser(laser){
 }
 
 export function animateShots(){
+
  bctx.clearRect(0,0,bCanvas.width, bCanvas.height)
 lasers.forEach(updateLaser)
 lasers.forEach(drawLaser)

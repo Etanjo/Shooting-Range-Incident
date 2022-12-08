@@ -2,10 +2,10 @@
   "name": "vite",
   "version": "0.0.0",
   "scripts": {
-    "serve-lambda": "SECRET=42 netlify-lambda serve src/lambda",
-    "dev": "SECRET=42 netlify-lambda serve src/lambda & vite",
-    "build": "vite build",
-    "serve": "SECRET=42 netlify-lambda serve src/lambda & vite"
+    "serve-lambda": "SECRET=9 netlify-lambda serve src/lambda",
+    "dev": "SECRET=9 netlify-lambda serve src/lambda & vite",
+    "build": "vite build & netlify-lambda build src/lambda",
+    "serve": "SECRET=9 netlify-lambda serve src/lambda & vite"
   },
   "devDependencies": {
     "vite": "^3.0.4"

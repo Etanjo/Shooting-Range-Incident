@@ -34,7 +34,6 @@ function drawjug() {
   );
 }
 
-
 let startTime = null;
 
 export function animatejug(timestamp: number = 0) {

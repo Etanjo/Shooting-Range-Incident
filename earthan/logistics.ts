@@ -22,8 +22,26 @@ export let game = {
   loading : false,
   state : 1, //game states: 1 means it hasn't started, 2 is mid-game, and 3 is post-game
   loads: 10, // loads = how many things need to load
-  
+  framerate: 60,
+  frameCounting: true,
+  frameCount: 0,
 }
+
+function countFrames(){
+  if(game.frameCounting){
+    game.frameCount+=1
+    requestAnimationFrame(countFrames)
+  }
+}
+countFrames()
+
+function stopCounting (){
+  game.framerate = game.frameCount
+  game.frameCounting = false
+  console.log(game.framerate)
+}
+setTimeout(stopCounting, 1000)
+
 
 import {player, updateScores, dmg} from './shop'
 
