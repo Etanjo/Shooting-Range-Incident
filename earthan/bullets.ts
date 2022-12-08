@@ -31,7 +31,7 @@ export function makeBullet(x, y){
   let bullet = {
   x: x,
   y : y,
-  speed: 5,
+  speed: 4,
   type: 1,
 }
   bullets.push(bullet)

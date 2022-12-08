@@ -13,6 +13,7 @@ export let player = {
   maxScoreStage: 60,
   scoreIncrement: 1
 }
+
 export let dmg = {
   moneyNeeded : 1000,
   button: document.querySelector("#dmg")

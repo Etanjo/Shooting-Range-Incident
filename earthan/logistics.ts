@@ -14,6 +14,7 @@ import {showNextFrame} from './background'
 import {green, greenImage, animategreen, greenAnimation} from '../brain/enemay'
 import {animatealpha, alpha} from '../anrrew/movement'
 
+
 let greenInterval
 let jugInterval
 let bgInterval
@@ -39,6 +40,7 @@ function stopCounting (){
   game.framerate = game.frameCount
   game.frameCounting = false
   console.log(game.framerate)
+  player.maxScoreStage = game.framerate
 }
 setTimeout(stopCounting, 1000)
 
