@@ -71,7 +71,6 @@ export function animatealpha() {
 window.addEventListener(
   'keydown',
   function(event) {
-    console.log(event.key, 'pressed');
     if (event.key == 'ArrowDown' || event.key == 's') {
       alpha.y += 20;
     }

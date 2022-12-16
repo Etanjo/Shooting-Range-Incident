@@ -11,7 +11,6 @@ export function greenkill (laser) {
     +
     (laser.y-green.y)*(laser.y-green.y)
   );
-  console.log(distance);
   if(distance <=75)
   {let kill = Math.random()*2
    if(kill<=player.damage){
@@ -31,7 +30,6 @@ export function jugkill (laser) {
     +
     (laser.y-jug.y)*(laser.y-jug.y)
   )
-  console.log(distance);
   if(distance <=75)
   {let kill = Math.random()*3
    if(kill<=player.damage){
@@ -46,9 +44,9 @@ export function jugkill (laser) {
 };
 
 export function playerKill(bullet){
-  console.log(bullet.x - 1125)
+  
   if(bullet.x - 1125 > alpha.x && bullet.y+5 > alpha.y && bullet.x - 1125 < alpha.x+130 && bullet.y+5 < alpha.y+130){
-    console.log('hit!')
+   
     game.state = 3
     setTimeout(endGame, 120)
     drawShotEndScreen()

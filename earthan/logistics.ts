@@ -37,10 +37,16 @@ function countFrames(){
 countFrames()
 
 function stopCounting (){
-  game.framerate = game.frameCount
+  if(game.frameCount >=30){
+    game.framerate = game.frameCount
+  }else{
+    game.framerate = 30
+  }
+  
   game.frameCounting = false
   console.log(game.framerate)
   player.maxScoreStage = game.framerate
+
 }
 setTimeout(stopCounting, 1000)
 
@@ -127,7 +133,6 @@ animatejug()
   if(event.key == 'e' && game.state == 2 || event.key == 'f' && game.state == 2){
     //shots.push(laser)
     makeLaser()
-    console.log(lasers)
        //animateShots()
   }
 })
@@ -155,6 +160,7 @@ function laserRemove(laser){
 function bulletRemove(bullet){
   bullets.splice(bullet, 1)
 }
+export let lastScore: number;
 
 export function endGame(){
 clearInterval(greenInterval)
@@ -166,6 +172,7 @@ bctx?.clearRect(0,0, bCanvas.width, bCanvas.height)
 jugctx?.clearRect(0,0, jugCanvas.width, jugCanvas.height)
 bullets.splice(0, bullets.length)
 lasers.splice(0, lasers.length)
+lastScore = player.score
 }
 
 let restartListener = 0
