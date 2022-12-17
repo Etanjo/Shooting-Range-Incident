@@ -10,3 +10,4 @@ import './anrrew/jugger.ts'
 import './earthan/logistics.ts'
 import './earthan/shop.ts'
 import './src/secretApp/serverCall'
+import "./src/secretApp/scoreSetting"

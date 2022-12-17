@@ -9,6 +9,7 @@ export let player = {
   health : 1,
   damage : 1,
   score: 0,
+  lastScore: 0,
   scoreStage: 0,
   maxScoreStage: 60,
   scoreIncrement: 1
