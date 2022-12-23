@@ -19,7 +19,6 @@ scores.addEventListener("click", async function(){
     <li>${scores[5].name} ${scores[5].score}</li>
     <li>${scores[6].name} ${scores[6].score}</li>
     <li>${scores[7].name} ${scores[7].score}</li>
-    <li>${scores[7].name} ${scores[7].score}</li>
     <li>${scores[8].name} ${scores[8].score}</li>
     <li>${scores[9].name} ${scores[9].score}</li>
     <li>${scores[10].name} ${scores[10].score}</li>
@@ -35,7 +34,8 @@ scores.addEventListener("click", async function(){
     <li>${scores[20].name} ${scores[20].score}</li>
     <li>${scores[21].name} ${scores[21].score}</li>
     <li>${scores[22].name} ${scores[22].score}</li>
-    <li>${scores[23].name} ${scores[23].score}</li>`
+    <li>${scores[23].name} ${scores[23].score}</li>
+    <li>${scores[24].name} ${scores[24].score}</li>`
     scores.innerText = "Update Scores"
     }
     catch(err){
