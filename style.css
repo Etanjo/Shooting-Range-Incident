@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap');
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -58,6 +59,7 @@ header a{
   text-decoration: none;
   color: #363653;
   font-weight: bold;
+  margin-right: 5px;
 }
 header a:hover{
   background-color: #363653aa;
@@ -67,4 +69,26 @@ header a:hover{
 #scoring{
   display: flex;
   justify-content: space-between;
+}
+.ui{
+  border-radius:3px;
+  border: 1px solid #363653;
+  background-color: #f4ebeb;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 12pt;
+  color: darkred;
+}
+#nameBox{
+  background-color: #000000;
+  color:red;
+  font-family: 'Inconsolata', monospace;
+  
+}
+main{
+  position: absoulte;
+  bottom: -300px;
+}
+board{
+  color: darkred;
+  font-family: 'Rajdhani', sans-serif;
 }
