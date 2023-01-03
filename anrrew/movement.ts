@@ -2,6 +2,7 @@
 //import alphaUrl from '/jacksoon/alpha.png';
 import {game} from '../earthan/logistics'
 import alphaUrl from '/jacksoon/Alphastill.png'
+import { player } from '../earthan/shop';
 
 let assetDiv: HTMLDivElement = document.querySelector('#assets');
 
@@ -72,16 +73,16 @@ window.addEventListener(
   'keydown',
   function(event) {
     if (event.key == 'ArrowDown' || event.key == 's') {
-      alpha.y += 20;
+      alpha.y += player.movementSpeed;
     }
     if (event.key == 'ArrowUp' || event.key == 'w') {
-      alpha.y -= 20;
+      alpha.y -= player.movementSpeed;
     }
     if (event.key == 'arrowLeft' || event.key == 'a') {
-      alpha.x -= 20;
+      alpha.x -= player.movementSpeed;
     }
     if (event.key == 'arrowRight' || event.key == 'd') {
-      alpha.x += 20;
+      alpha.x += player.movementSpeed;
     }
   }
 )
