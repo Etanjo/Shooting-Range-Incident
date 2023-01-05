@@ -54,6 +54,7 @@ header{
   color: #3e3d3d;
   font-family: 'Rajdhani', sans-serif;
   align-items: baseline;
+  width:2000px;
 }
 header a{
   text-decoration: none;
@@ -94,4 +95,12 @@ main{
   width: 100%;
   text-align: center;
   font-size: 24px;
+}
+#confirmation{
+display: block;
+padding: 0px;
+margin: 0px;
+position: absolute;
+top: 40px;
+right: 600px;
 }

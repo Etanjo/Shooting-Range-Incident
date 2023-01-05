@@ -13,7 +13,7 @@ import {jugShoot, greenShoot} from './enemyshoot'
 import {showNextFrame} from './background'
 import {green, greenImage, animategreen, greenAnimation} from '../brain/enemay'
 import {animatealpha, alpha} from '../anrrew/movement'
-
+import { text } from "../src/secretApp/scoreSetting"
 
 let greenInterval
 let jugInterval
@@ -27,6 +27,7 @@ export let game = {
   frameCounting: true,
   frameCount: 0,
 }
+
 
 function countFrames(){
   if(game.frameCounting){
@@ -95,7 +96,10 @@ function drawStart(){
   uictx.fillText("Gear up and prepare to fight, godspeed Alpha",uiCanvas.width/2, 220)
 if(startListenerCount == 0){
   startListenerCount += 1
-  window.addEventListener('keydown', function(event){
+  document.addEventListener('keydown', function(event){
+    if(event.target === text){
+      return //gotten from stack overflow :) https://stackoverflow.com/questions/45759367/js-disable-eventlistener-once-input-field-is-selected
+    }
     if(event.key == ' ' && game.state == 1){
       game.state = 2
       uictx.clearRect(0,0,uiCanvas.width,uiCanvas.height)
@@ -104,6 +108,7 @@ if(startListenerCount == 0){
   })
     
 }
+
 }
 
 drawStart()
@@ -205,6 +210,9 @@ export function drawShotEndScreen(){
   uictx.fillText("Press R to Restart",uiCanvas.width/2,uiCanvas.height-50)
   if(restartListener < 1){
     window.addEventListener('keydown', function(event){
+      if(event.target === text){
+        return
+      }
       if(event.key == 'r' && game.state == 3){
         restartGame()
       }
