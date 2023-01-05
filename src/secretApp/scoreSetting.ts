@@ -12,7 +12,8 @@ submit?.addEventListener("click", async function(){
 var response = await fetch(`/.netlify/functions/setScore?name=${name}&score=${lastScore}`)
 if(response){confirm.innerHTML = `Confirmed!`
 setTimeout(clearElement, 1500, confirm)
-}else{confirm.innerHTML =`Error`}
+}else{confirm.innerHTML =`Error`
+setTimeout(clearElement, 1500, confirm)}
     }
  catch(err){
     console.log(`
