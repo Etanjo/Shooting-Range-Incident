@@ -52,7 +52,7 @@ function stopCounting (){
 setTimeout(stopCounting, 1000)
 
 
-import {player, updateScores, dmg, speed} from './shop'
+import {player, updateScores, dmg, speed, health} from './shop'
 
 function drawLoad(){
   uictx.beginPath
@@ -235,6 +235,7 @@ player.money = 0
 player.damage = 1
 dmg.moneyNeeded = 1000
 speed.moneyNeeded = 50
+player.lives = 1
 uictx.clearRect(0,0,uiCanvas.width,uiCanvas.height)
 game.state = 2
   gameStartup()

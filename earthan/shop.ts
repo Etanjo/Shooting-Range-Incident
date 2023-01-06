@@ -6,7 +6,7 @@ import woodUrl from '/earthan/wood.png'
 
 export let player = {
   money : 0,
-  health : 1,
+  lives : 1,
   damage : 1,
   movementSpeed: 20 ,
   score: 0,
@@ -17,7 +17,7 @@ export let player = {
 }
 
 export let dmg = {
-  moneyNeeded : 1000,
+  moneyNeeded : 500,
   button: document.querySelector("#dmg")
 }
 
@@ -25,6 +25,19 @@ export let speed = {
   moneyNeeded : 50,
   button: document.querySelector('#speed')
 }
+
+export let health = {
+  moneyNeeded : 1500,
+  button: document.querySelector('#hp')
+}
+
+health.button?.addEventListener("click", function(event){
+  if(player.money >= health.moneyNeeded){
+    player.lives += 1
+    player.money -= health.moneyNeeded
+  }
+})
+
 speed.button?.addEventListener("click",function(event){
   if (player.money >= speed.moneyNeeded){
     player.movementSpeed += 5

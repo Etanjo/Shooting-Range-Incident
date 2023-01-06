@@ -36,7 +36,7 @@ scores.addEventListener("click", async function(){
     <li>${scores[22].name} ${scores[22].score}</li>
     <li>${scores[23].name} ${scores[23].score}</li>
     <li>${scores[24].name} ${scores[24].score}</li>`
-    scores.innerText = "Update Scores"
+    scores.innerHTML = "Update Scores"
     }
     catch(err){
         console.log(`

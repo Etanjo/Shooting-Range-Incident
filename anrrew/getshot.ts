@@ -1,4 +1,4 @@
-import {lasers} from '../earthan/bullets';
+import {bullets, lasers} from '../earthan/bullets';
 import {green} from '../brain/enemay';
 import {jug} from './jugger';
 import {player} from '../earthan/shop'
@@ -43,12 +43,17 @@ export function jugkill (laser) {
   }
 };
 
+console.log(player.lives)
+
 export function playerKill(bullet){
   
   if(bullet.x - 1125 > alpha.x && bullet.y+5 > alpha.y && bullet.x - 1125 < alpha.x+130 && bullet.y+5 < alpha.y+130){
-   
+    bullets.splice(bullet, 1)
+   player.lives -= 1
+   console.log(player.lives)
+   if(player.lives == 0){
     game.state = 3
     setTimeout(endGame, 120)
-    drawShotEndScreen()
+    drawShotEndScreen()}
   }
 }
