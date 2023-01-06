@@ -8,6 +8,7 @@ export let player = {
   money : 0,
   lives : 1,
   damage : 1,
+  passiveIncome: 0,
   movementSpeed: 20 ,
   score: 0,
   lastScore: 0,
@@ -30,6 +31,20 @@ export let health = {
   moneyNeeded : 1500,
   button: document.querySelector('#hp')
 }
+
+export let income = {
+  moneyNeeded : 250,
+  button: document.querySelector('#income')
+}
+
+income.button.addEventListener("click", function(event){
+  if(player.money >= income.moneyNeeded){
+    player.passiveIncome +=1
+    player.money -= income.moneyNeeded
+    income.moneyNeeded +=100
+    income.button.innerHTML = `Upgrade passive income for ${income.moneyNeeded} Bart Bucks`
+  }
+})
 
 health.button?.addEventListener("click", function(event){
   if(player.money >= health.moneyNeeded){
@@ -69,6 +84,7 @@ export function updateScores(){
   player.scoreStage += player.scoreIncrement
   if(player.scoreStage == player.maxScoreStage){
     player.score += 1
+    player.money += player.passiveIncome
     player.scoreStage = 0
   }
   if (game.state == 2){

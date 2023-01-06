@@ -236,6 +236,7 @@ player.damage = 1
 dmg.moneyNeeded = 1000
 speed.moneyNeeded = 50
 player.lives = 1
+player.passiveIncome = 0
 uictx.clearRect(0,0,uiCanvas.width,uiCanvas.height)
 game.state = 2
   gameStartup()
